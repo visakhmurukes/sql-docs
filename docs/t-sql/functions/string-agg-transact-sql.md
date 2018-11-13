@@ -74,6 +74,10 @@ Null values are ignored and the corresponding separator is not added. To return 
 
 `STRING_AGG` is available in any compatibility level.
 
+A single query should not have STRING_AGG expression on the same column based on different sort order. Specifying multiple STRING_AGG calls on the same SELECT query with different sort order on the same column will result in an error like below
+
+Multiple ordered aggregate functions in the same scope have mutually incompatible orderings
+
 ## Examples 
 
 ### A. Generate list of names separated in new lines 
